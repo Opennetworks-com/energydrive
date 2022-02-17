@@ -191,7 +191,12 @@ To run this sample:
 
 
 
-
+Run Example:
+python manager.py \\
+      --project_id=energydrive-analytics-dev \\
+      --cloud_region=europe-west3 \\
+      --service_account_json=$HOME/service_account.json \\
+      list-registries
 
 
 
