@@ -25,6 +25,9 @@ This is a setup script to automate the setup and provisioning of Ubuntu servers.
 
 # Installation
 SSH into your server and install git if it is not installed:
+initial RUN
+$ pip install -r requirements.txt
+
 ```bash
 sudo apt-get update
 sudo apt-get install git
