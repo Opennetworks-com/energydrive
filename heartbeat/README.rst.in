@@ -23,7 +23,7 @@ setup:
 - install_deps
 
 samples:
-- name: MQTT
+- name: MQTT example
   file: cloudiot_mqtt_example.py
   show_help: True
 
