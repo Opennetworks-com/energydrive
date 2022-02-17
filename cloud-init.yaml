@@ -1,0 +1,32 @@
+mkdir -p ~/www
+cd ~/www
+cat > user-data << 'EOF'
+#cloud-config
+autoinstall:
+  version: 1
+  identity:
+    hostname: [device-id]
+    password: "En3rgyDr!v3"
+    username: ed-iot
+EOF
+touch meta-data
+
+write_files:
+- path: /etc/cloud/cloud.cfg.d/ed-iot-networking.cfg
+  permissions: '0644'
+  content: |
+    network: {config: disabled}
+    
+- path: /etc/netplan/ed-iot-config.yaml
+  permissions: '0644'
+  content: |
+    network:
+        version: 2
+        ethernets:
+            ens3:
+                dhcp4: true
+                
+runcmd:
+ - rm /etc/netplan/ed-iot-config.yaml
+ - netplan generate
+ - netplan apply
