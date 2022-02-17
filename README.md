@@ -28,7 +28,7 @@ SSH into your server and install git if it is not installed:
 ```bash
 sudo apt-get update
 sudo apt-get install git
-sudo python3 setup.sh
+sudo apt install snapcraft
 ```
 
 Clone this repository into your home directory:
