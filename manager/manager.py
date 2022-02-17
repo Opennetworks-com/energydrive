@@ -1,5 +1,8 @@
+#!/usr/bin/env python
+
 """
-Google Cloud IoT Core device manager to administer devices.
+Example of using the Google Cloud IoT Core device manager to administer
+devices.
 
 Usage example:
 
