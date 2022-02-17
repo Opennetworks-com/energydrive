@@ -4,6 +4,11 @@ Energy Drive - IoT Device - Loadout
 Suggested for Ubuntu Core:
 https://ubuntu.com/download/raspberry-pi/thank-you?version=20&architecture=core-20-arm64+raspi
 
+Ubuntu Core is Snap containet architected. To Run Java and Python, you'll need to install dependancies to support
+this runtime environment first. I've included buildouts based on this updated support article:
+https://ubuntu.com/blog/how-to-snap-introducing-classic-confinement
+
+
 This is a setup script to automate the setup and provisioning of Ubuntu servers. It does the following:
 * Adds a new user account with sudo access
 * Adds a public ssh key for the new user account
