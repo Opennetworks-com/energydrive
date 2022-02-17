@@ -1,4 +1,4 @@
-# ED-iot
+# Energy Drive - Internet of Things code repository
 Energy Drive - IoT Device - Loadout
 
 Suggested for Ubuntu Core:
