@@ -8,6 +8,11 @@ Ubuntu Core is Snap container architected. To Run Java and Python, you'll need t
 this runtime environment first. I've included buildouts based on this updated support article:
 https://ubuntu.com/blog/how-to-snap-introducing-classic-confinement
 
+Resource Monitor recomendation by Industry: 
+Node-Exporter
+https://github.com/prometheus/node_exporter/releases/  "Pay attention to use ARM64"
+User Guide: https://prometheus.io/docs/guides/node-exporter/
+
 
 This is a setup script to automate the setup and provisioning of Ubuntu servers. It does the following:
 * Adds a new user account with sudo access
