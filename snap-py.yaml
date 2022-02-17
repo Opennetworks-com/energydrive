@@ -1,0 +1,20 @@
+name: asciinema
+version: 'latest'
+summary: Python Snap Craft for Ubuntu Core
+description: |
+This Snap Craft is aimed to set a Python install to Ubuntu IoT Core
+The purpose is to setup the environment for Python Script and Actions.
+This Source setup is taken from know working library "asciinema"
+
+grade: stable
+confinement: classic
+
+apps:
+  asciinema:
+    command: asciinema
+
+parts:
+  asciinema:
+    source: https://github.com/asciinema/asciinema.git
+    plugin: python
+    python-version: 'python3'
