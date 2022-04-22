@@ -34,9 +34,10 @@ initial RUN
 $ pip install -r requirements.txt
 
 ```bash
+sudo snap install classic --devmode --edge
+sudo classic
 sudo apt-get update
 sudo apt-get install git
-sudo apt install snapcraft
 ```
 
 Clone this repository into your home directory:
