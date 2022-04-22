@@ -106,6 +106,64 @@ function promptForPassword() {
    done 
 }
 
+import os, subprocess
+os.chdir('some dir')
+url = 'https://github.com/tim0n3/AutoPai.git'
+subprocess.call('git clone "{}" AutoPai'.format(url))
+_setup.sh
+_0-preinstall.sh
+_1-setup.sh
+#_2-user.sh
+_3-post-install.sh
+_ufw.sh
+
+  $ cat /sys/class/mem/zero/dev
+  1:5
+
+Note that the name of the directory containing a dev entry is usually the
+traditional name for the device node.  (The above entry is for "/dev/zero".)
+
+Entires for block devices are found at the following locations:
+
+  /sys/block/*/dev
+  /sys/block/*/*/dev
+
+Entries for char devices are found at the following locations:
+
+  /sys/bus/*/devices/*/dev
+  /sys/class/*/*/dev
+
+A very simple bash script to populate /dev from /sys (without addressing
+ownership or permissions of the resulting /dev nodes) might look like:
+
+  #!/bin/bash
+
+  # Populate block devices
+
+  for i in /sys/block/*/dev /sys/block/*/*/dev
+  do
+    if [ -f $i ]
+    then
+      MAJOR=$(sed 's/:.*//' < $i)
+      MINOR=$(sed 's/.*://' < $i)
+      DEVNAME=$(echo $i | sed -e 's@/dev@@' -e 's@.*/@@')
+      mknod /dev/$DEVNAME b $MAJOR $MINOR
+    fi
+  done
+
+  # Populate char devices
+
+  for i in /sys/bus/*/devices/*/dev /sys/class/*/*/dev
+  do
+    if [ -f $i ]
+    then
+      MAJOR=$(sed 's/:.*//' < $i)
+      MINOR=$(sed 's/.*://' < $i)
+      DEVNAME=$(echo $i | sed -e 's@/dev@@' -e 's@.*/@@')
+      mknod /dev/$DEVNAME c $MAJOR $MINOR
+    fi
+  done
+  
 function _is_mik() {
 	echo -e "Configuring network settings:\n"
 	read -n1 -p "Are you using a MikroTik LTE device (y/n):" networksettings
