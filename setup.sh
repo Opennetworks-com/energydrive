@@ -111,11 +111,11 @@ os.chdir('some dir')
 url = 'https://github.com/tim0n3/AutoPai.git'
 subprocess.call('git clone "{}" AutoPai'.format(url))
 _setup.sh
-_0-preinstall.sh
-_1-setup.sh
+#_0-preinstall.sh
+#_1-setup.sh
 #_2-user.sh
-_3-post-install.sh
-_ufw.sh
+#_3-post-install.sh
+#_ufw.sh
 
   $ cat /sys/class/mem/zero/dev
   1:5
@@ -338,6 +338,7 @@ function _start() {
 }
 
 main
+_setup.sh
 _run_firewall_setup_script
 _create_vdev_mapping
 _is_mik
